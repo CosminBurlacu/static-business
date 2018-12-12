@@ -1,0 +1,184 @@
+.search__component {
+    width:100%;
+    padding:1.45rem;
+    height:19rem;
+    // height:100%;
+
+    .search__forms {
+        width:100%;
+        height:100%;
+        display:grid;
+        grid-template-columns:1fr 1fr 4.5rem 1fr;
+        grid-column-gap: 3.2rem;
+        grid-row-gap: 3.2rem;
+        color:#003569;
+        // grid-template-columns:repeat(4, 1fr);
+
+        &--group {
+            display:grid;
+            transition:all 0.45s ease-in;
+            height:4.5rem;
+            // border:2px solid lightgrey;
+
+            label {
+                font-size:1.2rem;
+                padding-bottom:1.4rem;
+                padding-top:1.2rem;
+            }
+
+            .group__address__input {
+                position:relative;
+
+                svg {
+                    width:2.1rem;
+                    height:2.1rem;
+                    position: absolute;
+                    left:0.7rem;
+                    top:50%;
+                    transform:translateY(-50%);
+                    fill:lightgrey;
+                }
+
+                .address__input {
+                    width:100%;
+                    height:3.5rem;
+                    // padding-left:3.9rem;
+                    // width:100%;
+                }
+            }
+
+            .dates__input {
+                width:100%;
+                height:3.5rem;
+            }
+
+            .number__people {
+                width:4.5rem;
+                background-color:white;
+                height:auto;
+                padding-top:1rem;
+                padding-bottom:1rem;
+                font-size:1.2rem;
+                cursor: pointer;
+                transition:all 0.45s ease-in;
+                border:0.9px solid lightgrey;
+                display:grid;
+                align-items:center;
+                justify-items:center;
+            }
+
+            .amount__payment {
+                width:12rem;
+                height:3.5rem;
+                display:block;
+
+            }
+            
+            .select__business {
+                height:3.5rem;
+            }
+        }
+
+        .people__group {
+            width:4.5rem;
+        }
+
+        .submit__search {
+            grid-column: 4 / 5;
+            grid-row: 2 / 3;
+            display:grid;
+
+            .search__hotels {
+                width: 14rem;
+                height: 3.5rem;
+                align-self: end;
+                cursor:pointer;
+                background-color:transparent;
+                border:1.4px solid lightgrey;
+            }
+        }
+    }
+
+    @media screen and(max-width:445px) {
+        .search__forms {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+    }
+}
+
+@media screen and(max-width:445px) {
+    .search__component {
+        padding:0;
+        height:100%;
+        width:95%;
+        margin:0 auto;
+    }
+
+    .react-tabs__tab-panel--selected {
+        height:100vh;
+    }
+}
+
+.Dropdown-menu {
+    display:grid;
+    align-items:center;
+    justify-items:center;
+}
+
+.ReactTags__selected {
+    display:grid;
+    grid-template-areas: 
+    "a a a b b b";
+    align-items:center;
+    // grid-template-columns:100%;
+}
+
+.ReactTags__tagInput {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+
+.ReactTags__tagInputField {
+    height:3.5rem;
+}
+
+.filters__search {
+    grid-column: 1/3;
+    grid-row: 2/3;
+}
+
+.tag-wrapper {
+    color:white;
+    background-color:#003569;
+    margin-right:0.34rem;
+    text-align:center;
+    display: grid;
+    align-items:center;
+    justify-items: center;
+    grid-template-columns:repeat(2, 1fr);
+    border-radius:0.95rem;
+    height:2.1rem;
+}
+
+.group__address__calendar {
+    position:relative;
+
+    svg {
+        width:2.1rem;
+        height:2.1rem;
+        position: absolute;
+        left:0.7rem;
+        top:50%;
+        transform:translateY(-50%);
+        fill:lightgrey;
+    }
+
+    .dates__input {
+        width:100%;
+        height:3.5rem;
+        // padding-left:3.9rem;
+        // width:100%;
+    }
+}

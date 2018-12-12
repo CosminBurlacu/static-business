@@ -1,0 +1,1791 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+html {
+  font-family: "Roboto", sans-serif;
+  font-size: 62.5%; }
+
+body::-webkit-scrollbar {
+  display: none; }
+
+.main__component {
+  width: 100%;
+  height: 100vh; }
+
+:root {
+  --color-black:#000000;
+  --color-white:#ffffff;
+  --color-primary:#003569;
+  --color-secondary:#ff9478;
+  --color-tertiary:#f03434;
+  --color-quaternary:#36d7b7; }
+
+@keyframes slide__filters {
+  from {
+    opacity: 0;
+    display: none;
+    width: 0; }
+  to {
+    display: block;
+    opacity: 1;
+    width: 100vw; } }
+
+@keyframes slide__menus {
+  from {
+    opacity: 0;
+    display: none;
+    width: 0; }
+  to {
+    display: grid;
+    opacity: 1;
+    width: 100vw;
+    align-items: center;
+    justify-items: center;
+    margin-top: 9vh; } }
+
+.login__page {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  background-color: #f7f7f7;
+  background-image: url("image/login__background.jpg");
+  background-size: cover;
+  background-position: center; }
+  .login__page .login__header {
+    width: 100%;
+    height: 5.5rem;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: var(--color-white);
+    display: grid;
+    align-items: center;
+    justify-items: center; }
+    .login__page .login__header--wrapper {
+      width: 80%;
+      height: 90%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between; }
+      .login__page .login__header--wrapper .logo__login--image {
+        width: 4.5rem; }
+      .login__page .login__header--wrapper .datas__login {
+        display: flex; }
+        .login__page .login__header--wrapper .datas__login--currency {
+          display: block; }
+          .login__page .login__header--wrapper .datas__login--currency .currency__select {
+            border: none; }
+        @media screen and (max-width: 445px) {
+          .login__page .login__header--wrapper .datas__login .datas__login--currency {
+            display: none; } }
+        .login__page .login__header--wrapper .datas__login a {
+          display: block;
+          margin-left: 3.5rem;
+          text-decoration: none;
+          color: var(--color-primary);
+          font-family: "Roboto", sans-serif;
+          font-size: 1.2rem;
+          background-color: var(--color-primary);
+          color: var(--color-white);
+          padding: 0.20rem 4.5rem 0.20rem 4.5rem;
+          border-radius: 0.45rem; }
+        @media screen and (max-width: 445px) {
+          .login__page .login__header--wrapper .datas__login .redirectLogin {
+            display: none; } }
+    @media screen and (max-width: 445px) {
+      .login__page .login__header .login__header--wrapper {
+        width: 95%; } }
+  .login__page--wrapper {
+    width: 45rem;
+    height: 45rem;
+    background-color: var(--color-white);
+    display: grid;
+    align-items: center;
+    justify-items: center; }
+    .login__page--wrapper .loginForm {
+      width: 95%;
+      height: 95%;
+      transition: all 0.35rem ease-in; }
+      .login__page--wrapper .loginForm .login__logo--wrapper {
+        width: 100%;
+        height: 4.5rem;
+        display: grid;
+        align-items: center;
+        justify-items: center;
+        margin-top: 4.5rem; }
+        .login__page--wrapper .loginForm .login__logo--wrapper--element {
+          width: 4.5rem; }
+      .login__page--wrapper .loginForm h2 {
+        margin-top: 1.9rem;
+        font-size: 1.9rem;
+        text-align: center;
+        font-family: "Roboto", sans-serif;
+        margin-bottom: 2rem; }
+      .login__page--wrapper .loginForm p {
+        margin-bottom: 4.5rem; }
+      .login__page--wrapper .loginForm .formGroupLogin {
+        width: 100%;
+        height: 6.5rem;
+        display: grid;
+        grid-template-rows: repeat(2, 1fr);
+        align-items: center; }
+        .login__page--wrapper .loginForm .formGroupLogin label {
+          font-size: 1.2rem; }
+        .login__page--wrapper .loginForm .formGroupLogin input {
+          height: 100%;
+          border-radius: 0.45rem;
+          border: none;
+          border: 0.9px solid lightgrey; }
+      .login__page--wrapper .loginForm .formGroupLogin:not(:last-child) {
+        margin-bottom: 2rem; }
+      @media screen and (max-width: 445px) {
+        .login__page--wrapper .loginForm .formGroupLogin {
+          height: 9rem; } }
+      .login__page--wrapper .loginForm .login__button {
+        width: 100%;
+        height: 3.5rem;
+        background-color: var(--color-primary);
+        color: var(--color-white);
+        display: grid;
+        align-items: center;
+        justify-items: center;
+        font-family: "Roboto", sans-serif;
+        text-decoration: none;
+        font-size: 1.2rem;
+        font-weight: 300;
+        transition: all 0.35rem ease-in;
+        border-radius: 0.45rem; }
+        .login__page--wrapper .loginForm .login__button:hover {
+          background-color: #004283; }
+    @media screen and (max-width: 445px) {
+      .login__page--wrapper .loginForm {
+        height: auto; } }
+  @media screen and (max-width: 700px) {
+    .login__page .login__page--wrapper {
+      width: 80%; } }
+  @media screen and (max-width: 445px) {
+    .login__page .login__page--wrapper {
+      width: 100%;
+      height: 100%; } }
+
+.currency__select {
+  border: none;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.2rem; }
+
+.header__component {
+  width: 100%;
+  height: 5.5rem;
+  border-bottom: 2px solid lightgrey; }
+  .header__component--wrapper {
+    width: 80%;
+    margin: 0 auto;
+    height: 100%;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 29rem; }
+  @media screen and (max-width: 445px) {
+    .header__component .header__component--wrapper {
+      width: 95%;
+      grid-template-columns: 1fr auto; } }
+
+@media screen and (max-width: 445px) {
+  .header__component {
+    width: 100vw;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: var(--color-white);
+    z-index: 99; } }
+
+.header__logo {
+  width: 12rem;
+  height: 90%;
+  display: grid;
+  align-items: center; }
+  .header__logo--image {
+    height: 4.5rem; }
+
+.users__relatedDatas {
+  height: 90%;
+  display: grid;
+  grid-template-columns: 1fr 3.2rem 4.5rem 1fr;
+  grid-column-gap: 1.4rem;
+  align-items: center; }
+  .users__relatedDatas--currency {
+    height: 90%;
+    display: grid;
+    align-items: center;
+    justify-items: center; }
+    .users__relatedDatas--currency .currency__select {
+      border: none;
+      font-family: "Roboto", sans-serif;
+      font-weight: 300; }
+  .users__relatedDatas--notifications {
+    width: 2.7rem;
+    height: 90%;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    position: relative; }
+    .users__relatedDatas--notifications svg {
+      width: 2.7rem;
+      height: 2.7rem;
+      fill: #003569; }
+    .users__relatedDatas--notifications .notifications__length {
+      position: absolute;
+      width: 1.4rem;
+      height: 1.4rem;
+      border-radius: 50%;
+      color: var(--color-white);
+      display: grid;
+      align-items: center;
+      justify-items: center;
+      top: 9px;
+      right: -2px;
+      background-color: var(--color-tertiary); }
+  .users__relatedDatas--userimage {
+    width: 4.5rem;
+    height: 4.5rem;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    overflow: hidden;
+    border-radius: 50%; }
+    .users__relatedDatas--userimage--image {
+      width: 100%; }
+  .users__relatedDatas--username {
+    height: 90%;
+    display: grid;
+    align-items: center; }
+    .users__relatedDatas--username .username__value {
+      display: block;
+      font-size: 1.4rem;
+      font-weight: 300;
+      text-decoration: underline;
+      color: var(--color-primary); }
+    .users__relatedDatas--username .username__attribute {
+      display: block;
+      font-size: 1.2rem; }
+
+@media screen and (max-width: 445px) {
+  .users__relatedDatas {
+    display: none; } }
+
+.mobile__menus {
+  display: flex;
+  align-items: center; }
+  .mobile__menus svg {
+    width: 3.5rem;
+    height: 3.5rem;
+    fill: lightgrey;
+    margin-left: 0.45rem;
+    z-index: 9999999999; }
+
+.mobile__navigationPanel {
+  width: 0;
+  height: 100vh;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 9999999999;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: var(--color-white);
+  animation: slide__menus 0.45s ease-in forwards; }
+  .mobile__navigationPanel--wrapper {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    justify-content: space-around;
+    flex-direction: column;
+    height: 55vh; }
+    .mobile__navigationPanel--wrapper a {
+      font-size: 1.7rem;
+      text-align: center;
+      text-decoration: none;
+      color: var(--color-white); }
+    .mobile__navigationPanel--wrapper .company__names {
+      text-decoration: underline; }
+    .mobile__navigationPanel--wrapper .settings__mobile {
+      display: flex; }
+      .mobile__navigationPanel--wrapper .settings__mobile svg {
+        width: 2.1rem;
+        height: 2.1rem;
+        fill: var(--color-white); }
+      .mobile__navigationPanel--wrapper .settings__mobile span {
+        color: var(--color-white);
+        font-size: 1.4rem;
+        margin-left: 0.45rem; }
+
+.active__navigation {
+  color: #003569;
+  font-weight: bold; }
+
+.main__navigation {
+  width: 100%;
+  border-bottom: 0.9px solid lightgrey;
+  margin: 0 auto;
+  height: 4.5rem; }
+  .main__navigation--wrapper {
+    width: 80%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 9rem 9rem;
+    align-items: center;
+    margin: 0 auto; }
+    .main__navigation--wrapper a {
+      display: block;
+      text-decoration: none; }
+    .main__navigation--wrapper .search__icon {
+      display: flex;
+      align-items: center;
+      font-family: "Roboto", sans-serif; }
+      .main__navigation--wrapper .search__icon svg {
+        width: 1.9rem;
+        height: 1.9rem;
+        margin-right: 0.45rem;
+        fill: #003569; }
+    .main__navigation--wrapper .time__icon {
+      display: flex;
+      align-items: center;
+      font-family: "Roboto", sans-serif; }
+      .main__navigation--wrapper .time__icon svg {
+        width: 1.9rem;
+        height: 1.9rem;
+        margin-right: 0.45rem;
+        fill: #003569; }
+
+@media screen and (max-width: 445px) {
+  .main__navigation {
+    display: none; } }
+
+.home__content {
+  width: 100%;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  height: 80vh; }
+  .home__content--wrapper {
+    width: 80%;
+    grid-template-rows: 6.5rem 1fr;
+    height: 35rem; }
+    .home__content--wrapper--title {
+      padding-top: 2.1rem;
+      padding-bottom: 2.1rem; }
+      .home__content--wrapper--title h2 {
+        font-family: "Roboto", sans-serif;
+        font-weight: 300; }
+    @media screen and (max-width: 445px) {
+      .home__content--wrapper .home__content--wrapper--title {
+        width: 95%;
+        margin: 0 auto; } }
+  @media screen and (max-width: 800px) {
+    .home__content .home__content--wrapper {
+      width: 90%; } }
+  @media screen and (max-width: 445px) {
+    .home__content .home__content--wrapper {
+      height: 100%;
+      width: 100%; } }
+
+@media screen and (max-width: 445px) {
+  .home__content {
+    margin-top: 5.5rem;
+    height: 100vh; } }
+
+.tabslist__names {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  height: 4.5rem; }
+  .tabslist__names li {
+    list-style: none;
+    height: 100%;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    cursor: pointer; }
+
+.react-tabs__tab--selected {
+  background-color: #f7f7f7;
+  border-left: 0.9px solid lightgrey;
+  border-right: 0.9px solid lightgrey;
+  border-top: 0.9px solid lightgrey; }
+
+.react-tabs__tab-panel--selected {
+  background-color: #f7f7f7;
+  min-height: 25rem; }
+
+.search__component {
+  width: 100%;
+  padding: 1.45rem;
+  height: 19rem; }
+  .search__component .search__forms {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 4.5rem 1fr;
+    grid-column-gap: 3.2rem;
+    grid-row-gap: 3.2rem;
+    color: #003569; }
+    .search__component .search__forms--group {
+      display: grid;
+      transition: all 0.45s ease-in;
+      height: 4.5rem; }
+      .search__component .search__forms--group label {
+        font-size: 1.2rem;
+        padding-bottom: 1.4rem;
+        padding-top: 1.2rem; }
+      .search__component .search__forms--group .group__address__input {
+        position: relative; }
+        .search__component .search__forms--group .group__address__input svg {
+          width: 2.1rem;
+          height: 2.1rem;
+          position: absolute;
+          left: 0.7rem;
+          top: 50%;
+          transform: translateY(-50%);
+          fill: lightgrey; }
+        .search__component .search__forms--group .group__address__input .address__input {
+          width: 100%;
+          height: 3.5rem; }
+      .search__component .search__forms--group .dates__input {
+        width: 100%;
+        height: 3.5rem; }
+      .search__component .search__forms--group .number__people {
+        width: 4.5rem;
+        background-color: white;
+        height: auto;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        font-size: 1.2rem;
+        cursor: pointer;
+        transition: all 0.45s ease-in;
+        border: 0.9px solid lightgrey;
+        display: grid;
+        align-items: center;
+        justify-items: center; }
+      .search__component .search__forms--group .amount__payment {
+        width: 12rem;
+        height: 3.5rem;
+        display: block; }
+      .search__component .search__forms--group .select__business {
+        height: 3.5rem; }
+    .search__component .search__forms .people__group {
+      width: 4.5rem; }
+    .search__component .search__forms .submit__search {
+      grid-column: 4 / 5;
+      grid-row: 2 / 3;
+      display: grid; }
+      .search__component .search__forms .submit__search .search__hotels {
+        width: 14rem;
+        height: 3.5rem;
+        align-self: end;
+        cursor: pointer;
+        background-color: transparent;
+        border: 1.4px solid lightgrey; }
+  @media screen and (max-width: 445px) {
+    .search__component .search__forms {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly; } }
+
+@media screen and (max-width: 445px) {
+  .search__component {
+    padding: 0;
+    height: 100%;
+    width: 95%;
+    margin: 0 auto; }
+  .react-tabs__tab-panel--selected {
+    height: 100vh; } }
+
+.Dropdown-menu {
+  display: grid;
+  align-items: center;
+  justify-items: center; }
+
+.ReactTags__selected {
+  display: grid;
+  grid-template-areas: "a a a b b b";
+  align-items: center; }
+
+.ReactTags__tagInput {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2; }
+
+.ReactTags__tagInputField {
+  height: 3.5rem; }
+
+.filters__search {
+  grid-column: 1/3;
+  grid-row: 2/3; }
+
+.tag-wrapper {
+  color: white;
+  background-color: #003569;
+  margin-right: 0.34rem;
+  text-align: center;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: repeat(2, 1fr);
+  border-radius: 0.95rem;
+  height: 2.1rem; }
+
+.group__address__calendar {
+  position: relative; }
+  .group__address__calendar svg {
+    width: 2.1rem;
+    height: 2.1rem;
+    position: absolute;
+    left: 0.7rem;
+    top: 50%;
+    transform: translateY(-50%);
+    fill: lightgrey; }
+  .group__address__calendar .dates__input {
+    width: 100%;
+    height: 3.5rem; }
+
+.templates__component {
+  width: 100%;
+  height: 100%; }
+  .templates__component--wrapper {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 3.5rem 1fr;
+    padding-top: 1.45rem;
+    padding-bottom: 1.45rem;
+    margin: 0 auto; }
+    .templates__component--wrapper .templates__search {
+      width: 14rem;
+      position: relative;
+      margin-left: 1.45rem;
+      margin-right: 1.45rem; }
+      .templates__component--wrapper .templates__search--icons {
+        width: 1.9rem;
+        height: 1.9rem;
+        position: absolute;
+        top: 50%;
+        left: 0.45rem;
+        transform: translateY(-50%); }
+      .templates__component--wrapper .templates__search .searchTemplates {
+        width: 25rem;
+        padding-left: 3.2rem;
+        height: 3.5rem; }
+      @media screen and (max-width: 445px) {
+        .templates__component--wrapper .templates__search .searchTemplates {
+          width: 100%;
+          padding-left: 0; } }
+    @media screen and (max-width: 445rem) {
+      .templates__component--wrapper .templates__search {
+        width: 92%;
+        margin: 0 auto; } }
+    .templates__component--wrapper .templates__results {
+      margin-left: 1.45rem;
+      margin-right: 1.45rem; }
+      .templates__component--wrapper .templates__results--element {
+        width: 100%;
+        height: 9.5rem;
+        border: 0.9px solid lightgrey;
+        margin-top: 3.5rem;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr) 7rem;
+        align-items: center; }
+        .templates__component--wrapper .templates__results--element .templates__information {
+          font-size: 1.4rem;
+          font-family: "Roboto", sans-serif; }
+          .templates__component--wrapper .templates__results--element .templates__information p {
+            font-size: 1.2rem;
+            font-weight: 300;
+            margin-bottom: 0.45rem; }
+        .templates__component--wrapper .templates__results--element .templates__information:first-child {
+          margin-left: 0.45rem; }
+        .templates__component--wrapper .templates__results--element .templates__information:last-child {
+          margin-right: 0.45rem; }
+      @media screen and (max-width: 445px) {
+        .templates__component--wrapper .templates__results .templates__results--element {
+          grid-template-columns: repeat(4, 1fr);
+          margin-top: 2.1rem;
+          height: 12rem; } }
+
+.templatesAction {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  align-items: center;
+  height: 70%; }
+  .templatesAction .templates__actions svg {
+    width: 1.4rem;
+    height: 1.4rem;
+    cursor: pointer;
+    fill: var(--color-primary); }
+  .templatesAction .templates__actions svg:not(:last-child) {
+    margin-right: 0.95rem; }
+  .templatesAction .templates__select--button {
+    width: 17rem;
+    height: 3.5rem;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    text-decoration: none;
+    padding: 0.21rem 0.65rem 0.21rem 0.65rem;
+    border-radius: 0.45rem;
+    text-transform: uppercase;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300; }
+
+@media screen and (max-width: 445px) {
+  .templatesAction {
+    grid-column: 4 / 5; } }
+
+.searchTemplates::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */ }
+
+.searchTemplates {
+  box-sizing: border-box;
+  padding-left: 3.5rem !important; }
+
+.bookingHistoryAction {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-template-rows: 100%; }
+
+.templates__selectBooking--button {
+  width: 17rem;
+  height: 3.5rem;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  text-decoration: none;
+  padding: 0.21rem 0.65rem 0.21rem 0.65rem;
+  border-radius: 0.45rem;
+  text-transform: uppercase;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300; }
+
+@media screen and (max-width: 445px) {
+  .bookingHistoryAction {
+    grid-column: 4 / 5; } }
+
+.content__divisionResults {
+  width: 100%;
+  min-height: 82vh;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  background-color: #f7f7f7;
+  padding-top: 1.2rem; }
+  .content__divisionResults--wrapper {
+    width: 80%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 25rem 1fr;
+    grid-column-gap: 1.4rem; }
+  @media screen and (max-width: 445px) {
+    .content__divisionResults--wrapper {
+      width: 100%;
+      height: 100%;
+      grid-template-rows: auto;
+      grid-template-columns: 100%; } }
+
+@media screen and (max-width: 445px) {
+  .results__bookingsComponent {
+    grid-template-rows: auto !important;
+    grid-template-columns: 100% !important; } }
+
+@media screen and (max-width: 445px) {
+  .bookingResultElement {
+    height: auto !important;
+    grid-template-columns: 100% !important; } }
+
+@media screen and (max-width: 445px) {
+  .bookingResultElement--datas {
+    font-size: 1.4rem; }
+  .hotel__name {
+    font-size: 1.4rem; }
+  .filters__showImages {
+    margin-top: 1.2rem; }
+  .topsWrapper {
+    width: 100vw !important;
+    display: flex !important;
+    flex-direction: row;
+    justify-content: space-between !important;
+    overflow-x: hidden !important; }
+  .topPicksElement {
+    width: 85vw !important; }
+  .topPicksElement:not(:last-child) {
+    margin-right: 4.5rem !important; } }
+
+.filters__component {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  background-color: var(--color-white); }
+  .filters__component--wrapper {
+    width: 95%;
+    height: 97.5%; }
+    .filters__component--wrapper .filters__forms {
+      width: 100%;
+      height: 82vh;
+      overflow-y: scroll; }
+      .filters__component--wrapper .filters__forms .formgroup__filters,
+      .filters__component--wrapper .filters__forms .business__filters,
+      .filters__component--wrapper .filters__forms .additional__filters,
+      .filters__component--wrapper .filters__forms .search__button {
+        width: 95%;
+        margin: 0 auto; }
+      .filters__component--wrapper .filters__forms::-webkit-scrollbar {
+        width: 0; }
+
+.formgroup__filters {
+  margin-bottom: 0.9rem; }
+
+.destination__filters {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr); }
+  .destination__filters label {
+    font-size: 1.2rem;
+    padding-bottom: 1.4rem;
+    padding-top: 1.2rem; }
+  .destination__filters .group__address__input {
+    position: relative; }
+    .destination__filters .group__address__input svg {
+      width: 2.1rem;
+      height: 2.1rem;
+      position: absolute;
+      left: 0.7rem;
+      top: 50%;
+      transform: translateY(-50%);
+      fill: lightgrey; }
+    .destination__filters .group__address__input input {
+      width: 100%;
+      height: 3.5rem; }
+
+.dates__filters label {
+  font-size: 1.2rem;
+  padding-bottom: 1.4rem;
+  padding-top: 1.2rem; }
+
+.dates__filters .group__address__calendar {
+  position: relative; }
+  .dates__filters .group__address__calendar svg {
+    width: 2.1rem;
+    height: 2.1rem;
+    position: absolute;
+    left: 0.7rem;
+    top: 50%;
+    transform: translateY(-50%);
+    fill: lightgrey; }
+  .dates__filters .group__address__calendar input {
+    width: 100%;
+    height: 3.5rem; }
+
+.dual__formgroup {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 4.5rem 1fr;
+  grid-column-gap: 1.1rem; }
+  .dual__formgroup .people__formgroup {
+    padding: 5px; }
+    .dual__formgroup .people__formgroup .number__people {
+      background-color: var(--color-white);
+      border: 0.9px solid lightgrey;
+      padding: 5px;
+      text-align: center; }
+  .dual__formgroup .budget__formgroup {
+    padding: 5px; }
+
+.business__filters label,
+.additional__filters label {
+  font-size: 1.2rem;
+  margin-bottom: 0.95rem; }
+
+.business__filters div,
+.additional__filters div {
+  width: 100%;
+  margin-top: 0.95rem; }
+  .business__filters div label,
+  .additional__filters div label {
+    display: block; }
+
+.search__button {
+  width: 95%;
+  margin-top: 0.45rem;
+  margin: 0 auto; }
+  .search__button .search__bookings {
+    width: 100%;
+    height: 3.5rem;
+    border: none;
+    border-radius: 0.45rem;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    text-align: center;
+    cursor: pointer; }
+
+.label__title {
+  font-weight: bold;
+  color: var(--color-primary); }
+
+.results__bookingsComponent {
+  display: grid;
+  grid-template-rows: 45vh 1fr;
+  overflow-y: scroll;
+  grid-row-gap: 1.2rem; }
+  .results__bookingsComponent::-webkit-scrollbar {
+    width: 0; }
+  .results__bookingsComponent .top__picks {
+    background-color: var(--color-white);
+    padding: 0.45rem; }
+    .results__bookingsComponent .top__picks--title {
+      font-size: 1.2rem;
+      font-family: "Roboto", sans-serif;
+      color: var(--color-primary);
+      font-weight: 300;
+      margin-bottom: 0.45rem; }
+  @media screen and (max-width: 445px) {
+    .results__bookingsComponent .top__picks {
+      margin-top: 3.45rem;
+      overflow-x: hidden; } }
+  .results__bookingsComponent .regular__results {
+    background-color: var(--color-white);
+    padding: 0.45rem; }
+    .results__bookingsComponent .regular__results--title {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 2.1rem 0 2.1rem 0; }
+
+.topsWrapper {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 4.5rem; }
+  .topsWrapper .topPicksElement {
+    height: 32vh;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr); }
+    .topsWrapper .topPicksElement--image {
+      width: 100%;
+      overflow: hidden; }
+      .topsWrapper .topPicksElement--image img {
+        width: 100%; }
+    .topsWrapper .topPicksElement--content {
+      width: 100%; }
+      .topsWrapper .topPicksElement--content .upper__contentDatas {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        grid-column-gap: 1.2rem;
+        margin: 0.20rem 0rem 0.20rem 0rem; }
+        .topsWrapper .topPicksElement--content .upper__contentDatas p {
+          font-size: 1.2rem;
+          color: var(--color-primary); }
+
+.priceActionDatas {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 1.45rem; }
+  .priceActionDatas p {
+    font-size: 1.7rem;
+    color: var(--color-quaternary); }
+    .priceActionDatas p span {
+      display: block;
+      font-size: 1.1rem; }
+  .priceActionDatas .see_available_rooms {
+    background-color: var(--color-primary);
+    height: 2.1rem;
+    text-decoration: none;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    color: var(--color-white);
+    padding: 0.35rem;
+    border-radius: 0.45rem;
+    cursor: pointer;
+    /* width: 14rem; */ }
+
+.ranking__stars {
+  width: 1.1rem;
+  height: 1.1rem; }
+
+.svg__results {
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.45rem; }
+
+@media screen and (max-width: 445px) {
+  .top__picks--content {
+    overflow-x: hidden; } }
+
+.bookingResultElement {
+  height: 15rem;
+  display: grid;
+  grid-template-columns: 18rem 1fr;
+  grid-column-gap: 1.4rem;
+  padding: 0.45rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
+  .bookingResultElement:not(:first-child) {
+    margin-top: 1.1rem; }
+  .bookingResultElement:hover {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.21), 0 5px 5px rgba(0, 0, 0, 0.21);
+    transform: translateY(-2px); }
+  .bookingResultElement--image {
+    overflow: hidden; }
+    .bookingResultElement--image img {
+      width: 100%; }
+  .bookingResultElement--datas {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr); }
+    .bookingResultElement--datas .bookingElement--top--name {
+      width: 100%;
+      display: flex; }
+      .bookingResultElement--datas .bookingElement--top--name .hotel__name {
+        font-weight: bold;
+        color: var(--color-primary);
+        font-size: 1.2rem;
+        font-family: "Roboto", sans-serif; }
+      .bookingResultElement--datas .bookingElement--top--name .hotel__ranking {
+        margin-left: 1.4rem; }
+    .bookingResultElement--datas .bookingElement--top--address {
+      margin-top: 0.45rem; }
+      .bookingResultElement--datas .bookingElement--top--address .hotel__address {
+        font-size: 1.2rem;
+        font-weight: 300; }
+      .bookingResultElement--datas .bookingElement--top--address .hotel__recommend {
+        font-size: 1.2rem;
+        font-weight: 300;
+        margin-top: 0.20rem; }
+    .bookingResultElement--datas .bookingElement--bottom {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); }
+      .bookingResultElement--datas .bookingElement--bottom--filters {
+        width: 100%;
+        display: grid;
+        grid-template-rows: repeat(2, 1fr); }
+        .bookingResultElement--datas .bookingElement--bottom--filters .filters__showNames svg {
+          width: 1.9rem;
+          height: 1.9rem;
+          background-color: #f7f7f7;
+          border-radius: 0.45rem;
+          padding: 0.7rem; }
+        .bookingResultElement--datas .bookingElement--bottom--filters .filters__showNames svg:not(:first-child) {
+          margin-left: 0.45rem; }
+        .bookingResultElement--datas .bookingElement--bottom--filters .filters__showImages {
+          margin-top: 1rem; }
+          .bookingResultElement--datas .bookingElement--bottom--filters .filters__showImages span {
+            width: auto;
+            padding: 0.21rem;
+            background-color: var(--color-primary);
+            color: var(--color-white);
+            border-radius: 0.45rem; }
+          .bookingResultElement--datas .bookingElement--bottom--filters .filters__showImages span:not(:last-child) {
+            margin-right: 1rem; }
+      .bookingResultElement--datas .bookingElement--bottom--access {
+        width: 100%;
+        display: grid;
+        grid-template-rows: repeat(2, 1fr); }
+        .bookingResultElement--datas .bookingElement--bottom--access .price__hotelElement span {
+          font-size: 1.7rem;
+          color: var(--color-quaternary); }
+        .bookingResultElement--datas .bookingElement--bottom--access .accessButton__hotelElement {
+          display: grid;
+          align-items: center; }
+          .bookingResultElement--datas .bookingElement--bottom--access .accessButton__hotelElement a {
+            background-color: var(--color-primary);
+            height: 2.1rem;
+            text-decoration: none;
+            display: grid;
+            align-items: center;
+            justify-items: center;
+            color: var(--color-white);
+            padding: 0.35rem;
+            border-radius: 0.45rem;
+            cursor: pointer;
+            width: 11rem; }
+
+.overview__page {
+  width: 100%;
+  min-height: 82vh;
+  background-color: #f7f7f7; }
+  .overview__page--wrapper {
+    width: 80%;
+    margin: 0 auto; }
+    .overview__page--wrapper .booking__stage {
+      display: grid;
+      margin-top: 1.2rem;
+      grid-template-columns: 1fr 1fr auto; }
+      .overview__page--wrapper .booking__stage a {
+        display: grid;
+        grid-template-columns: 3.5rem 1fr;
+        align-items: center;
+        text-decoration: none;
+        position: relative; }
+        .overview__page--wrapper .booking__stage a:not(:last-child):after {
+          content: "";
+          width: 57%;
+          height: 1.2px;
+          background-color: lightgrey;
+          position: absolute;
+          right: 2.1rem; }
+        .overview__page--wrapper .booking__stage a .stage__number {
+          width: 3.5rem;
+          height: 3.5rem;
+          border-radius: 50%;
+          display: grid;
+          align-items: center;
+          justify-items: center;
+          border: 0.9px solid lightgrey;
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+          transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
+        .overview__page--wrapper .booking__stage a .stages__description {
+          margin-left: 1.2rem;
+          color: var(--color-primary); }
+
+.active__stages {
+  font-weight: bold; }
+  .active__stages .stage__number {
+    border: 1.9px solid blue; }
+
+.content__globalOverview {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 1.2rem;
+  display: grid;
+  grid-template-columns: 25rem 1fr;
+  grid-column-gap: 1.4rem;
+  padding-bottom: 1.4rem;
+  overflow: hidden; }
+  .content__globalOverview .left__overview {
+    display: grid;
+    grid-template-rows: 92.5vh auto;
+    grid-row-gap: 1.4rem; }
+    .content__globalOverview .left__overview .map__location {
+      width: 100%;
+      height: 12rem; }
+  .content__globalOverview .right__overview--visualDatas {
+    width: 100%;
+    height: 55vh;
+    display: grid;
+    grid-template-columns: 1fr 17.5rem;
+    grid-column-gap: 1.4rem; }
+    .content__globalOverview .right__overview--visualDatas .extraInfo__component {
+      width: 100%;
+      height: 100%;
+      display: grid;
+      align-items: center;
+      justify-items: center;
+      background-color: var(--color-white); }
+      .content__globalOverview .right__overview--visualDatas .extraInfo__component--wrapper {
+        width: 90%;
+        height: 96.5%;
+        margin: 0 auto; }
+        .content__globalOverview .right__overview--visualDatas .extraInfo__component--wrapper h2 {
+          font-size: 1.2rem;
+          font-weight: bold;
+          font-family: "Roboto", sans-serif;
+          margin-bottom: 0.45rem;
+          color: var(--color-primary); }
+        .content__globalOverview .right__overview--visualDatas .extraInfo__component--wrapper p {
+          font-size: 1.2rem;
+          font-weight: 300;
+          margin-bottom: 0.45rem; }
+        .content__globalOverview .right__overview--visualDatas .extraInfo__component--wrapper label {
+          font-size: 1.2rem;
+          font-weight: 300;
+          margin-bottom: 0.45rem; }
+        .content__globalOverview .right__overview--visualDatas .extraInfo__component--wrapper input {
+          width: 90%;
+          height: 3.2rem;
+          border: 1.2px solid lightgrey;
+          color: lightgrey;
+          margin-bottom: 1.45rem;
+          border-radius: 0.45rem;
+          margin-top: 1.45rem; }
+        .content__globalOverview .right__overview--visualDatas .extraInfo__component--wrapper .elementsImagesWrapper--content {
+          width: 100%;
+          display: flex;
+          align-items: center; }
+          .content__globalOverview .right__overview--visualDatas .extraInfo__component--wrapper .elementsImagesWrapper--content span {
+            margin-left: 1.2rem;
+            font-size: 1.2rem; }
+        .content__globalOverview .right__overview--visualDatas .extraInfo__component--wrapper .parkingInformation {
+          width: 100%;
+          margin-top: 1.2rem; }
+          .content__globalOverview .right__overview--visualDatas .extraInfo__component--wrapper .parkingInformation--title {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center; }
+            .content__globalOverview .right__overview--visualDatas .extraInfo__component--wrapper .parkingInformation--title svg {
+              width: 2.1rem;
+              height: 2.1rem;
+              fill: var(--color-primary); }
+            .content__globalOverview .right__overview--visualDatas .extraInfo__component--wrapper .parkingInformation--title span {
+              margin-left: 1.2rem;
+              font-size: 1.2rem; }
+          .content__globalOverview .right__overview--visualDatas .extraInfo__component--wrapper .parkingInformation--content {
+            margin-top: 0.45rem; }
+  @media screen and (max-width: 445px) {
+    .content__globalOverview .right__overview .right__overview--visualDatas {
+      height: 100%;
+      grid-template-rows: 1fr 1fr;
+      grid-template-columns: 100%; } }
+  .content__globalOverview .right__overview--textDatas {
+    margin-top: 4.5rem;
+    margin-bottom: 4.5rem;
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr 17.5rem;
+    grid-column-gap: 1.4rem; }
+    .content__globalOverview .right__overview--textDatas .visualFacilities {
+      width: 100%;
+      height: 100%;
+      display: grid;
+      align-items: center;
+      justify-items: center;
+      background-color: var(--color-white); }
+      .content__globalOverview .right__overview--textDatas .visualFacilities--wrapper {
+        width: 90%;
+        height: 96.5%;
+        margin: 0 auto; }
+        .content__globalOverview .right__overview--textDatas .visualFacilities--wrapper h2 {
+          font-size: 1.2rem;
+          font-weight: bold;
+          font-family: "Roboto", sans-serif;
+          margin-bottom: 0.45rem;
+          color: var(--color-primary); }
+      @media screen and (max-width: 445px) {
+        .content__globalOverview .right__overview--textDatas .visualFacilities--wrapper {
+          height: auto; } }
+  @media screen and (max-width: 445px) {
+    .content__globalOverview .right__overview .right__overview--textDatas {
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      grid-template-columns: 100%;
+      width: 95%;
+      margin: 0 auto;
+      grid-row-gap: 2.1rem; } }
+  .content__globalOverview .right__overview--availabilityDatas {
+    width: 100%;
+    margin-top: 3.2rem;
+    margin-bottom: 3.2rem;
+    height: auto; }
+    .content__globalOverview .right__overview--availabilityDatas h2 {
+      font-size: 1.2rem;
+      font-weight: bold;
+      font-family: "Roboto", sans-serif;
+      margin-bottom: 0.45rem;
+      color: var(--color-primary); }
+    .content__globalOverview .right__overview--availabilityDatas .available__rooms {
+      width: 100%;
+      display: grid;
+      grid-template-rows: 9rem 1fr;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.25);
+      background-color: white;
+      padding-bottom: 1.45rem; }
+      .content__globalOverview .right__overview--availabilityDatas .available__rooms .checkin__dates {
+        display: grid;
+        align-items: center;
+        justify-items: center; }
+        .content__globalOverview .right__overview--availabilityDatas .available__rooms .checkin__dates--wrapper {
+          width: 90%;
+          height: 70%;
+          display: grid;
+          grid-template-columns: 1fr 1fr auto;
+          grid-column-gap: 1.4rem;
+          align-items: center; }
+          .content__globalOverview .right__overview--availabilityDatas .available__rooms .checkin__dates--wrapper .checkin__value p,
+          .content__globalOverview .right__overview--availabilityDatas .available__rooms .checkin__dates--wrapper .checkout__value p {
+            font-size: 1.2rem;
+            font-weight: 300;
+            margin-bottom: 0.45rem; }
+          .content__globalOverview .right__overview--availabilityDatas .available__rooms .checkin__dates--wrapper .checkin__value span,
+          .content__globalOverview .right__overview--availabilityDatas .available__rooms .checkin__dates--wrapper .checkout__value span {
+            font-size: 1.3rem;
+            font-weight: bold;
+            display: grid;
+            grid-template-columns: 2.1rem 1fr;
+            grid-column-gap: 1.4rem;
+            align-items: center;
+            color: var(--color-primary); }
+            .content__globalOverview .right__overview--availabilityDatas .available__rooms .checkin__dates--wrapper .checkin__value span svg,
+            .content__globalOverview .right__overview--availabilityDatas .available__rooms .checkin__dates--wrapper .checkout__value span svg {
+              width: 2.1rem;
+              height: 2.1rem;
+              fill: var(--color-primary);
+              margin-right: 0.45rem; }
+      .content__globalOverview .right__overview--availabilityDatas .available__rooms .checkin__rooms {
+        width: 100%; }
+        .content__globalOverview .right__overview--availabilityDatas .available__rooms .checkin__rooms .roomTypeOffers {
+          width: 95%;
+          height: 14rem;
+          display: grid;
+          grid-template-columns: 42% 1fr;
+          margin: 0 auto;
+          padding: 0.45rem;
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.25); }
+          .content__globalOverview .right__overview--availabilityDatas .available__rooms .checkin__rooms .roomTypeOffers:not(:first-child) {
+            margin-top: 1.4rem; }
+          .content__globalOverview .right__overview--availabilityDatas .available__rooms .checkin__rooms .roomTypeOffers--information {
+            display: grid;
+            grid-template-rows: repeat(2, 1fr); }
+            .content__globalOverview .right__overview--availabilityDatas .available__rooms .checkin__rooms .roomTypeOffers--information--types p {
+              font-size: 1.2rem;
+              font-weight: bold;
+              font-family: "Roboto", sans-serif;
+              margin-bottom: 0.45rem;
+              color: var(--color-primary); }
+            .content__globalOverview .right__overview--availabilityDatas .available__rooms .checkin__rooms .roomTypeOffers--information--types span {
+              margin-bottom: 0.45rem;
+              display: block; }
+              .content__globalOverview .right__overview--availabilityDatas .available__rooms .checkin__rooms .roomTypeOffers--information--types span svg {
+                width: 1.9rem;
+                height: 1.9rem;
+                fill: var(--color-primary);
+                margin-right: 1.4rem; }
+            .content__globalOverview .right__overview--availabilityDatas .available__rooms .checkin__rooms .roomTypeOffers--information--facilities {
+              display: grid;
+              align-items: center; }
+              .content__globalOverview .right__overview--availabilityDatas .available__rooms .checkin__rooms .roomTypeOffers--information--facilities span {
+                font-size: 1.2rem;
+                text-transform: uppercase;
+                color: var(--color-quaternary);
+                font-weight: 400; }
+          .content__globalOverview .right__overview--availabilityDatas .available__rooms .checkin__rooms .roomTypeOffers--datas {
+            display: grid;
+            grid-template-rows: repeat(2, 1fr); }
+            .content__globalOverview .right__overview--availabilityDatas .available__rooms .checkin__rooms .roomTypeOffers--datas .refundable,
+            .content__globalOverview .right__overview--availabilityDatas .available__rooms .checkin__rooms .roomTypeOffers--datas .nonrefundable {
+              display: grid;
+              grid-template-columns: repeat(3, 1fr);
+              grid-column-gap: 0.45rem; }
+              .content__globalOverview .right__overview--availabilityDatas .available__rooms .checkin__rooms .roomTypeOffers--datas .refundable .refund,
+              .content__globalOverview .right__overview--availabilityDatas .available__rooms .checkin__rooms .roomTypeOffers--datas .nonrefundable .refund {
+                display: grid;
+                align-items: center; }
+                .content__globalOverview .right__overview--availabilityDatas .available__rooms .checkin__rooms .roomTypeOffers--datas .refundable .refund p,
+                .content__globalOverview .right__overview--availabilityDatas .available__rooms .checkin__rooms .roomTypeOffers--datas .nonrefundable .refund p {
+                  font-size: 1.2rem;
+                  font-weight: bold;
+                  font-family: "Roboto", sans-serif;
+                  margin-bottom: 0.45rem;
+                  color: var(--color-primary); }
+                  .content__globalOverview .right__overview--availabilityDatas .available__rooms .checkin__rooms .roomTypeOffers--datas .refundable .refund p span,
+                  .content__globalOverview .right__overview--availabilityDatas .available__rooms .checkin__rooms .roomTypeOffers--datas .nonrefundable .refund p span {
+                    color: var(--color-quaternary);
+                    font-size: 1.4rem;
+                    font-weight: 400; }
+              .content__globalOverview .right__overview--availabilityDatas .available__rooms .checkin__rooms .roomTypeOffers--datas .refundable .rooms,
+              .content__globalOverview .right__overview--availabilityDatas .available__rooms .checkin__rooms .roomTypeOffers--datas .nonrefundable .rooms {
+                display: grid;
+                grid-template-columns: 1fr auto;
+                align-items: center; }
+                .content__globalOverview .right__overview--availabilityDatas .available__rooms .checkin__rooms .roomTypeOffers--datas .refundable .rooms p,
+                .content__globalOverview .right__overview--availabilityDatas .available__rooms .checkin__rooms .roomTypeOffers--datas .nonrefundable .rooms p {
+                  font-size: 1.2rem;
+                  font-weight: bold;
+                  font-family: "Roboto", sans-serif;
+                  margin-bottom: 0.45rem;
+                  color: var(--color-primary); }
+                .content__globalOverview .right__overview--availabilityDatas .available__rooms .checkin__rooms .roomTypeOffers--datas .refundable .rooms select,
+                .content__globalOverview .right__overview--availabilityDatas .available__rooms .checkin__rooms .roomTypeOffers--datas .nonrefundable .rooms select {
+                  border: none;
+                  width: 4.5rem; }
+              .content__globalOverview .right__overview--availabilityDatas .available__rooms .checkin__rooms .roomTypeOffers--datas .refundable .booking,
+              .content__globalOverview .right__overview--availabilityDatas .available__rooms .checkin__rooms .roomTypeOffers--datas .nonrefundable .booking {
+                display: grid;
+                align-items: center;
+                justify-items: center; }
+                .content__globalOverview .right__overview--availabilityDatas .available__rooms .checkin__rooms .roomTypeOffers--datas .refundable .booking a,
+                .content__globalOverview .right__overview--availabilityDatas .available__rooms .checkin__rooms .roomTypeOffers--datas .nonrefundable .booking a {
+                  width: 9rem;
+                  height: 2.1rem;
+                  border-radius: 0.45rem;
+                  color: var(--color-white);
+                  background-color: var(--color-primary);
+                  padding: 0.45rem;
+                  cursor: pointer;
+                  display: grid;
+                  align-items: center;
+                  justify-items: center;
+                  text-decoration: none;
+                  font-size: 1.2rem;
+                  font-family: "Roboto", sans-serif;
+                  font-weight: 400; }
+        @media screen and (max-width: 445px) {
+          .content__globalOverview .right__overview--availabilityDatas .available__rooms .checkin__rooms .roomTypeOffers {
+            display: grid;
+            grid-template-rows: repeat(2, 1fr);
+            grid-template-columns: 100%;
+            height: auto; } }
+      @media screen and (max-width: 445px) {
+        .content__globalOverview .right__overview--availabilityDatas .available__rooms .checkin__rooms {
+          width: 95%;
+          margin: 0 auto; } }
+
+@media screen and (max-width: 445px) {
+  .content__globalOverview {
+    width: 100%;
+    grid-template-columns: 100%; } }
+
+.carousel.carousel-slider {
+  height: 25rem !important; }
+
+.searchTransportationImages {
+  width: 2.1rem;
+  height: 2.1rem;
+  fill: var(--color-primary); }
+
+.carousel .thumbs {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around; }
+
+.carousel .thumb img {
+  height: 100%; }
+
+.elementsImagesWrapper--content {
+  width: 100%;
+  display: flex;
+  align-items: center; }
+  .elementsImagesWrapper--content svg {
+    width: 2.1rem;
+    height: 2.1rem;
+    fill: var(--color-primary); }
+  .elementsImagesWrapper--content span {
+    margin-left: 1.2rem;
+    font-size: 1.2rem; }
+
+.icons__stages {
+  width: 1.9rem;
+  height: 1.9rem;
+  fill: var(--color-quaternary); }
+
+.expand__filters {
+  width: 4.5rem;
+  height: 4.5rem;
+  position: fixed;
+  left: 0.9rem;
+  bottom: 0.9rem;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  border-radius: 50%;
+  background-color: var(--color-quaternary);
+  z-index: 9999999; }
+  .expand__filters svg {
+    width: 3.2rem;
+    height: 3.2rem;
+    fill: var(--color-white); }
+
+@media screen and (max-width: 445px) {
+  .onlyText {
+    padding: 1.45rem 0.45rem 0.45rem 0.45rem;
+    font-size: 1.2rem; } }
+
+.slide__filters {
+  position: fixed;
+  width: 0;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 99999;
+  transition: 0.45s ease-in;
+  animation: slide__filters 0.45s ease-in forwards; }
+
+.booking__detailsContent {
+  width: 100%;
+  min-height: 82vh;
+  background-color: #f7f7f7;
+  margin-top: 1.4rem; }
+  .booking__detailsContent--wrapper {
+    width: 80%;
+    margin: 0 auto; }
+
+.content__globalOverview .left__overview--details {
+  display: grid;
+  grid-template-rows: 27rem 13rem;
+  grid-row-gap: 1.4rem; }
+  .content__globalOverview .left__overview--details .bookingDetailsComponent {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    background-color: var(--color-white); }
+    .content__globalOverview .left__overview--details .bookingDetailsComponent--wrapper {
+      width: 95%;
+      height: 95%; }
+      .content__globalOverview .left__overview--details .bookingDetailsComponent--wrapper h2 {
+        font-size: 1.2rem;
+        font-weight: bold;
+        font-family: "Roboto", sans-serif;
+        margin-bottom: 0.45rem;
+        color: var(--color-primary); }
+      .content__globalOverview .left__overview--details .bookingDetailsComponent--wrapper .check__group {
+        margin-top: 1.4rem; }
+        .content__globalOverview .left__overview--details .bookingDetailsComponent--wrapper .check__group p {
+          font-size: 1.2rem;
+          font-weight: 300;
+          margin-bottom: 0.45rem; }
+        .content__globalOverview .left__overview--details .bookingDetailsComponent--wrapper .check__group span {
+          font-size: 1.2rem;
+          font-weight: bold;
+          display: grid;
+          grid-template-columns: 2.1rem 1fr;
+          grid-column-gap: 1.4rem;
+          align-items: center;
+          color: var(--color-primary); }
+          .content__globalOverview .left__overview--details .bookingDetailsComponent--wrapper .check__group span svg {
+            width: 1.4rem;
+            height: 1.4rem;
+            fill: var(--color-primary);
+            margin-right: 0.45rem; }
+      .content__globalOverview .left__overview--details .bookingDetailsComponent--wrapper .chooseDifferentDates {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin-top: 0.45rem; }
+        .content__globalOverview .left__overview--details .bookingDetailsComponent--wrapper .chooseDifferentDates a {
+          font-size: 1.2rem;
+          color: var(--color-primary);
+          text-align: right; }
+      .content__globalOverview .left__overview--details .bookingDetailsComponent--wrapper .stayDuration,
+      .content__globalOverview .left__overview--details .bookingDetailsComponent--wrapper .selectedRooms {
+        width: 100%;
+        height: 4.5rem;
+        display: grid;
+        grid-template-rows: repeat(2, 1fr); }
+        .content__globalOverview .left__overview--details .bookingDetailsComponent--wrapper .stayDuration p,
+        .content__globalOverview .left__overview--details .bookingDetailsComponent--wrapper .selectedRooms p {
+          font-size: 1.2rem;
+          font-weight: 300;
+          margin-bottom: 0.45rem; }
+        .content__globalOverview .left__overview--details .bookingDetailsComponent--wrapper .stayDuration span,
+        .content__globalOverview .left__overview--details .bookingDetailsComponent--wrapper .selectedRooms span {
+          font-size: 1.2rem;
+          font-weight: bold;
+          color: var(--color-primary); }
+  .content__globalOverview .left__overview--details .priceSummaryComponent {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    background-color: var(--color-white); }
+    .content__globalOverview .left__overview--details .priceSummaryComponent--wrapper {
+      width: 95%;
+      height: 95%; }
+      .content__globalOverview .left__overview--details .priceSummaryComponent--wrapper h2 {
+        font-size: 1.2rem;
+        font-weight: bold;
+        font-family: "Roboto", sans-serif;
+        margin-bottom: 0.45rem;
+        color: var(--color-primary); }
+      .content__globalOverview .left__overview--details .priceSummaryComponent--wrapper .total__price {
+        width: 100%;
+        display: grid;
+        grid-template-rows: repeat(2, 1fr);
+        grid-row-gap: 0.45rem; }
+        .content__globalOverview .left__overview--details .priceSummaryComponent--wrapper .total__price .roomPriceTotal,
+        .content__globalOverview .left__overview--details .priceSummaryComponent--wrapper .total__price .vatPriceTotal {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between; }
+          .content__globalOverview .left__overview--details .priceSummaryComponent--wrapper .total__price .roomPriceTotal p,
+          .content__globalOverview .left__overview--details .priceSummaryComponent--wrapper .total__price .vatPriceTotal p {
+            font-size: 1.2rem;
+            font-weight: 300;
+            margin-bottom: 0.45rem; }
+          .content__globalOverview .left__overview--details .priceSummaryComponent--wrapper .total__price .roomPriceTotal span,
+          .content__globalOverview .left__overview--details .priceSummaryComponent--wrapper .total__price .vatPriceTotal span {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--color-primary); }
+      .content__globalOverview .left__overview--details .priceSummaryComponent--wrapper .total__value {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 0.45rem;
+        border-top: 0.9px solid lightgrey;
+        padding-top: 0.95rem; }
+        .content__globalOverview .left__overview--details .priceSummaryComponent--wrapper .total__value--texts p {
+          text-transform: uppercase;
+          font-size: 1.2rem;
+          font-weight: 300;
+          margin-bottom: 0.45rem; }
+        .content__globalOverview .left__overview--details .priceSummaryComponent--wrapper .total__value--texts span {
+          font-size: 1.2rem;
+          font-weight: 300; }
+        .content__globalOverview .left__overview--details .priceSummaryComponent--wrapper .total__value--numbers p {
+          text-transform: uppercase;
+          font-size: 1.4rem;
+          font-weight: bold;
+          color: var(--color-primary); }
+
+.content__globalOverview .right__overview--details {
+  width: 100%;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  background-color: var(--color-white); }
+  .content__globalOverview .right__overview--details--wrapper {
+    width: 97%;
+    height: 95%; }
+    .content__globalOverview .right__overview--details--wrapper h2 {
+      margin-bottom: 0.45rem; }
+
+.data__table {
+  width: 100%;
+  height: 100%; }
+  .data__table .selectDepartments {
+    width: 100%;
+    height: 7rem;
+    margin-bottom: 0.45rem; }
+    .data__table .selectDepartments h2 {
+      font-size: 1.2rem;
+      font-weight: bold;
+      font-family: "Roboto", sans-serif;
+      margin-bottom: 0.45rem;
+      color: var(--color-primary); }
+    .data__table .selectDepartments--forms {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-column-gap: 1.4rem;
+      margin-top: 0.45rem; }
+      .data__table .selectDepartments--forms--content {
+        display: grid;
+        grid-template-rows: repeat(2, 1fr);
+        height: 100%; }
+        .data__table .selectDepartments--forms--content .checkboxes__group {
+          display: grid;
+          grid-template-columns: 1.4rem 1fr;
+          align-items: center; }
+  .data__table .searchForEmployees h2 {
+    font-size: 1.2rem;
+    font-family: "Roboto", sans-serif;
+    margin-bottom: 0.45rem;
+    color: var(--color-primary); }
+  .data__table .searchForEmployees--search {
+    width: 1.7rem;
+    height: 3.2rem;
+    position: relative; }
+    .data__table .searchForEmployees--search svg {
+      width: 1.9rem;
+      height: 1.9rem;
+      position: absolute;
+      top: 50%;
+      left: 0.45rem;
+      transform: translateY(-50%);
+      fill: lightgrey; }
+    .data__table .searchForEmployees--search input {
+      width: 17rem;
+      height: 3.2rem; }
+  .data__table .searchForEmployees--table {
+    width: 100%;
+    display: grid;
+    grid-template-rows: 4.5rem 1fr;
+    margin-top: 0.95rem;
+    border: 0.9px solid lightgrey; }
+    .data__table .searchForEmployees--table--title {
+      width: 100%;
+      height: 100%;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      align-items: center; }
+      .data__table .searchForEmployees--table--title span {
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 1.2rem; }
+    .data__table .searchForEmployees--table--content {
+      width: 100%; }
+
+.searchForEmplayees--element {
+  width: 100%;
+  height: 4.5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-bottom: 1.45rem;
+  background-color: #f7f7f7; }
+  .searchForEmplayees--element--names, .searchForEmplayees--element--department, .searchForEmplayees--element--going {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    margin-bottom: 0.45rem; }
+
+.primary__contact {
+  margin-top: 0.95rem;
+  margin-bottom: 4.5rem; }
+  .primary__contact h2 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-family: "Roboto", sans-serif;
+    margin-top: 0.95rem;
+    color: var(--color-primary); }
+  .primary__contact form select {
+    width: 14rem;
+    height: 3.2rem;
+    border: 0.9px solid lightgrey; }
+    .primary__contact form select::-webkit-scrollbar {
+      width: 0.45px;
+      border-radius: 0.45rem; }
+  .primary__contact form h2 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-family: "Roboto", sans-serif;
+    margin-top: 0.95rem;
+    color: var(--color-primary); }
+  .primary__contact form p {
+    margin-top: 0.45rem;
+    margin-bottom: 0.45rem; }
+  .primary__contact form textarea {
+    width: 50%;
+    min-width: 50%;
+    max-width: 50%;
+    height: 7rem;
+    min-height: 7rem;
+    max-height: 9rem; }
+  .primary__contact form .estimatedArrival {
+    width: 100%;
+    display: grid;
+    align-items: center;
+    display: flex;
+    align-items: center;
+    margin-top: 0.45rem;
+    margin-bottom: 0.45rem; }
+    .primary__contact form .estimatedArrival label {
+      font-size: 1.2rem;
+      font-weight: bold;
+      font-family: "Roboto", sans-serif;
+      margin-top: 0.95rem;
+      color: var(--color-primary); }
+    .primary__contact form .estimatedArrival select {
+      margin-left: 0.95rem; }
+
+.extra__optionsRequests--group {
+  margin-bottom: 0.45rem;
+  margin-top: 0.45rem;
+  display: flex;
+  align-items: center; }
+  .extra__optionsRequests--group label {
+    margin-left: 0.45rem; }
+
+.proceed__payment {
+  width: 100%;
+  height: 3.2rem;
+  padding: 0.35rem 0.45rem 0.35rem 0.45rem;
+  display: grid;
+  align-items: center;
+  justify-content: right; }
+  .proceed__payment a {
+    height: 3.2rem;
+    padding: 0.35rem 0.45rem 0.35rem 0.45rem;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 0.45rem;
+    font-family: "Roboto", sans-serif; }
+
+.payment__areas {
+  width: 100%;
+  border: 0.9px solid lightgrey;
+  display: grid;
+  grid-template-rows: 9rem 7rem; }
+  .payment__areas--wrapper {
+    width: 95%;
+    margin: 0 auto; }
+    .payment__areas--wrapper--method {
+      display: grid;
+      grid-template-columns: 9rem 12rem;
+      align-items: center;
+      padding: 0.95rem 0 0.95rem 0; }
+      .payment__areas--wrapper--method label {
+        margin-right: 0.95rem; }
+    .payment__areas--wrapper--datas {
+      padding: 0.95rem 0 0.95rem 0; }
+  .payment__areas--confirm {
+    width: 95%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 1.4rem;
+    align-items: center; }
+    .payment__areas--confirm .cardInformation,
+    .payment__areas--confirm .priceInformation,
+    .payment__areas--confirm .confirmInformation {
+      display: grid;
+      align-items: center;
+      height: 4.5rem; }
+      .payment__areas--confirm .cardInformation a,
+      .payment__areas--confirm .priceInformation a,
+      .payment__areas--confirm .confirmInformation a {
+        width: 9rem;
+        text-align: center;
+        font-family: "Roboto", sans-serif;
+        color: var(--color-white);
+        background-color: var(--color-primary);
+        cursor: pointer;
+        display: grid;
+        align-items: center;
+        justify-items: center;
+        text-decoration: none;
+        padding: 0.45rem 0.35rem 0.45rem 0.35rem;
+        border-radius: 0.45rem; }
+      .payment__areas--confirm .cardInformation span,
+      .payment__areas--confirm .priceInformation span,
+      .payment__areas--confirm .confirmInformation span {
+        font-weight: bold;
+        font-size: 1.2rem;
+        color: var(--color-primary); }
+
+.cardInformation {
+  justify-items: left; }
+
+.priceInformation {
+  justify-items: left; }
+
+.confirmInformation {
+  justify-items: right; }
+
+.proceed__payment {
+  width: 97%;
+  margin: 0 auto; }
+
+.payment__finish {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  background-color: #f7f7f7; }
+  .payment__finish--wrapper {
+    width: 42rem;
+    height: 45vh;
+    border-radius: 0.45rem;
+    background-color: var(--color-white); }
+
+.success__payment--title {
+  width: 95%;
+  height: 4.5rem;
+  margin: 0 auto;
+  padding-top: 0.45rem;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  color: var(--color-quaternary); }
+
+.success__payment--content {
+  width: 95%;
+  height: auto;
+  padding-bottom: 0.45rem; }

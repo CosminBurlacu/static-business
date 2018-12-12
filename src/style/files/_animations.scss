@@ -1,0 +1,30 @@
+@keyframes slide__filters {
+    from {
+        opacity:0;
+        display:none;
+        width:0;
+    }
+
+    to {
+        display:block;
+        opacity:1;
+        width:100vw;
+    }
+}
+
+@keyframes slide__menus {
+    from {
+        opacity:0;
+        display:none;
+        width:0;
+    }
+
+    to {
+        display:grid;
+        opacity:1;
+        width:100vw;
+        align-items:center;
+        justify-items:center;
+        margin-top:9vh;
+    }
+}

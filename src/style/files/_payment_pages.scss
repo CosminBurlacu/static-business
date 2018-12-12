@@ -1,0 +1,87 @@
+.payment__areas {
+    width:100%;
+    border:0.9px solid lightgrey;
+    display:grid;
+    grid-template-rows:9rem 7rem;
+    // align-items:center;
+    
+    &--wrapper {
+        width:95%;
+        margin:0 auto;
+        // border:2px solid lightgrey;
+
+        &--method {
+            display:grid;
+            grid-template-columns:9rem 12rem;
+            align-items:center;
+            padding: 0.95rem 0 0.95rem 0;
+
+            label {
+                margin-right:0.95rem;
+            }
+        }
+
+        &--datas {
+            padding: 0.95rem 0 0.95rem 0;
+        }
+    }
+
+    &--confirm {
+        width:95%;
+        margin:0 auto;
+        display:grid;
+        grid-template-columns:repeat(3, 1fr);
+        grid-column-gap:1.4rem;
+        align-items:center;
+        // border:0.9px solid lightgrey;
+        // border:2px solid lightgrey;
+        
+        .cardInformation,
+        .priceInformation,
+        .confirmInformation {
+            // border:2px solid lightgrey;
+            display:grid;
+            align-items:center;
+            height:4.5rem;
+
+            a {
+                width:9rem;
+                text-align:center;
+                font-family:$font-primary;
+                color:var(--color-white);
+                background-color:var(--color-primary);
+                cursor: pointer;
+                display:grid;
+                align-items:center;
+                justify-items:center;
+                text-decoration:none;
+                padding:0.45rem 0.35rem 0.45rem 0.35rem;
+                border-radius:0.45rem;
+            }
+
+            span {
+                font-weight:bold;
+                font-size:1.2rem;
+                color:var(--color-primary);
+            }
+        }
+
+    }
+}
+
+.cardInformation {
+    justify-items:left;
+}
+
+.priceInformation {
+    justify-items:left;
+}
+
+.confirmInformation {
+    justify-items:right;
+}
+
+.proceed__payment {
+    width:97%;
+    margin:0 auto;
+}

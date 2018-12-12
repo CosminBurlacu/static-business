@@ -1,0 +1,153 @@
+.bookingResultElement {
+    // width:100%;
+    // border:1.1px solid lightgrey;
+    height:15rem;
+    display:grid;
+    grid-template-columns:18rem 1fr;
+    grid-column-gap:1.4rem;
+    padding:0.45rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+
+    &:not(:first-child) {
+        margin-top:1.1rem;
+    }
+
+    &:hover {
+        box-shadow: 0 2px 5px rgba(0,0,0,0.21), 0 5px 5px rgba(0,0,0,0.21);
+        transform:translateY(-2px);
+    }
+
+    &--image {
+        // border:2px solid lightgrey;
+        overflow:hidden;
+
+        img {
+            width:100%;
+        }
+    }
+    
+    &--datas {
+        // border:2px solid lightgrey;
+        display:grid;
+        grid-template-rows:repeat(2, 1fr);
+
+        .bookingElement--top {
+            // border:2px solid lightgrey;
+            
+            &--name {
+                width:100%;
+                display:flex;
+                // padding:1.4rem 0 1.4rem 0;
+                // display:grid;
+                .hotel__name {
+                    font-weight:bold;
+                    color:var(--color-primary);
+                    font-size:1.2rem;
+                    font-family:$font-primary;
+                    // display:flex;
+                    // flex-direction:row;
+                }
+
+                .hotel__ranking {
+                    margin-left:1.4rem;
+                }
+            }
+
+            &--address {
+                margin-top:0.45rem;
+
+                .hotel__address {
+                    font-size:1.2rem;
+                    font-weight:300;
+                }
+                
+                .hotel__recommend {
+                    font-size:1.2rem;
+                    font-weight:300;
+                    margin-top:0.20rem;
+                }
+            }
+        }
+        
+        .bookingElement--bottom {
+            // border:2px solid lightgrey; 
+            display:grid;
+            grid-template-columns:repeat(2, 1fr);
+            
+            &--filters {
+                // border:2px solid lightgrey;
+                width:100%;
+                display:grid;
+                grid-template-rows:repeat(2, 1fr);
+
+                .filters__showNames {
+
+                    svg {
+                        width:1.9rem;
+                        height:1.9rem;
+                        background-color:#f7f7f7;
+                        border-radius:0.45rem;
+                        padding:0.7rem;
+                    }
+
+                    svg:not(:first-child) {
+                        margin-left:0.45rem;
+                    }
+
+                }
+
+                .filters__showImages {
+                    margin-top:1rem;
+
+                    span {
+                        width:auto;
+                        padding:0.21rem;
+                        background-color:var(--color-primary);
+                        color:var(--color-white);
+                        border-radius:0.45rem;
+                    }
+
+                    span:not(:last-child) {
+                        margin-right:1rem;
+                    }
+                }
+            }
+
+            &--access {
+                // border:2px solid lightgrey;
+                width:100%;
+                display:grid;
+                grid-template-rows:repeat(2, 1fr);
+
+                .price__hotelElement {
+                    // p {
+                        span {
+                            font-size: 1.7rem;
+                            color: var(--color-quaternary);
+                        }
+                    // }
+                }
+
+                .accessButton__hotelElement {
+                    display:grid;
+                    align-items:center;
+                    
+                    a {
+                        background-color: var(--color-primary);
+                        height: 2.1rem;
+                        text-decoration: none;
+                        display: grid;
+                        align-items: center;
+                        justify-items: center;
+                        color: var(--color-white);
+                        padding: 0.35rem;
+                        border-radius: 0.45rem;
+                        cursor: pointer;
+                        width: 11rem; 
+                    }
+                }
+            }
+        }
+    }
+}

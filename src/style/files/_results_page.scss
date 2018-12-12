@@ -1,0 +1,76 @@
+.content__divisionResults {
+    width:100%;
+    min-height:82vh;
+    // border:2px solid lightgrey;
+    display:grid;
+    align-items:center;
+    justify-items:center;
+    background-color:#f7f7f7;
+    padding-top:1.2rem;
+
+    &--wrapper {
+        width: 80%;
+        // height:95%;
+        margin:0 auto;
+        // border:2px solid lightgrey;
+        display:grid;
+        grid-template-columns:25rem 1fr;
+        grid-column-gap:1.4rem;
+    }
+
+    @media screen and(max-width:445px) {
+        &--wrapper {
+            width:100%;
+            height:100%;
+            grid-template-rows:auto;
+            grid-template-columns: 100%;
+        }
+    }
+}
+
+@media screen and(max-width:445px) {
+    .results__bookingsComponent {
+        grid-template-rows:auto!important;
+        grid-template-columns:100%!important;
+    }
+}
+
+@media screen and(max-width:445px) {
+    .bookingResultElement {
+        height: auto!important;
+        grid-template-columns: 100%!important;
+    }
+}
+
+@media screen and(max-width:445px) {
+    .bookingResultElement--datas {
+        font-size:1.4rem;
+    }
+
+    .hotel__name {
+        font-size:1.4rem;
+    }
+
+    .filters__showImages {
+        margin-top:1.2rem;
+    }
+
+    .topsWrapper {
+        width: 100vw!important;
+        display: flex!important;
+        flex-direction: row;
+        justify-content: space-between!important;
+        overflow-x: hidden!important;
+    }
+
+    .topPicksElement {
+        width:85vw!important;
+    }
+
+    .topPicksElement:not(:last-child) {
+        margin-right:4.5rem!important;
+    }
+}
+
+
+

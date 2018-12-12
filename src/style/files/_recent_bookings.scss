@@ -1,0 +1,27 @@
+.bookingHistoryAction {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-template-rows: 100%;
+}
+
+.templates__selectBooking {
+    &--button {
+        width:17rem;
+        height:3.5rem;
+        background-color:var(--color-primary);
+        color:var(--color-white);
+        text-decoration:none;
+        padding:0.21rem 0.65rem 0.21rem 0.65rem;
+        border-radius:0.45rem;
+        text-transform:uppercase;
+        font-family:$font-primary;
+        font-weight:300;
+    }
+}
+
+@media screen and(max-width:445px) {
+    .bookingHistoryAction {
+        grid-column:4 / 5;
+    }
+}
